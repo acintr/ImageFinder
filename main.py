@@ -1,6 +1,7 @@
 """
     ImageFinder
     A program to find (and open) all the images saved in the current computer user.
+    Code can be modified to look into more directories.
 """
 import os
 import webbrowser
@@ -40,14 +41,14 @@ def open_imgs():
 
 try:
     user = os.getlogin()    # Get the user currently logged in the computer
-    loc = os.getcwd()       # Get the current directory
-    f_dir = (loc.split(user))[0]+user       # Generate the user directory (will be used as the starting directory
+    loc = os.getcwd()       # Get the current working directory
+    f_dir = (loc.split(user))[0]+user       # Generate the user directory (will be used as the starting directory)
 
     find_imgs(f_dir)        # Begin search
 
     print('\nFound ', len(img_list), 'images within', f_dir+'/...')
 
-    # open_pics()       # Remove comment to open images
+    # open_imgs()       # Remove comment to open images
 
 except():
     print('nope')
